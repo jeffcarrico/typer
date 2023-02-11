@@ -58,7 +58,7 @@ def except_hook(
     )
     standard_traceback = os.getenv("_TYPER_STANDARD_TRACEBACK")
     if (
-        standard_traceback
+        (standard_traceback and standard_traceback != "0")
         or not exception_config
         or not exception_config.pretty_exceptions_enable
     ):
